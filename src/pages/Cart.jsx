@@ -20,7 +20,7 @@ const Cart = () => {
             {
               cart.length > 0 ? 
               (
-                <div className="flex flex-col md:flex-row justify-between items-start gap-y-10 md:gap-x-10 p-10">
+                <div className="flex flex-col w-full gap-5 p-4 md:flex-row items-start ">
                     <div className='w-full md:w-[70%] flex flex-col gap-y-5'>
                         {
                           cart.map((item,index)=>{
@@ -31,21 +31,25 @@ const Cart = () => {
                         }
                     </div>
 
-                    <div className='w-full md:w-[30%] flex flex-col gap-y-5 border-2 border-gray-300 rounded-lg'>
+                    <div className='w-full md:w-[30%] flex flex-col justify-between gap-y-5 border-2 border-gray-300 rounded-lg p-5 mih-h-[450px]'>
                        
-                       <div className=' p-10 w-full flex flex-col gap-y-3'>
-                          <div className='uppercase text-green-800 font-semibold text-xl -mb-3'>Your Cart</div>
-                          <div className=' font-semibold text-green-800 text-[2.95rem] uppercase'>Summary</div>
-                          <p className=' text-gray-700 text-xl font-semibold'>
-                            Total Items:<span className="text-black">{cart.length}</span>
+                       <div className=' flex flex-col gap-y-2'>
+                          <div className='uppercase text-green-800 font-semibold text-xl tracking-wider'>
+                            Your Cart
+                          </div>
+                          <div className=' font-bold text-green-800 text-3xl md:text-4xl uppercase tracking-tight'>
+                            Summary
+                          </div>
+                          <p className=' text-gray-700 text-lg font-semibold mt-3'>
+                            Total Items:<span className="text-black font-bold">{cart.length}</span>
                           </p>
                        </div>
 
-                       <div className=' p-10 w-full'>
-                          <p className=' text-gray-700 font-semibold text-xl'>
-                            Total Amount:<span className='text-black'>${totalAmount.toFixed(2)}</span>
+                       <div className='mt-10'>
+                          <p className=' text-gray-700 font-semibold text-lg flex justify-between items-center whitespace-nowrap'>
+                            Total Amount:<span className='text-black font-bold'>${totalAmount.toFixed(2)}</span>
                           </p>
-                          <button className=' bg-green-700 rounded-lg px-6 py-5 w-full text-white font-bold mt-3 text-xl'>
+                          <button className=' bg-green-700 hover:bg-green-800 transition-colors  duration-300 rounded-lg py-3 w-full text-white font-bold mt-4 text-lg'>
                               CheckOut Now
                           </button>
                        </div>

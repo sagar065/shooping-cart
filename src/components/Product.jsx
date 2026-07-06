@@ -28,7 +28,7 @@ const Product = ({item}) => {
         <p className="w-40 text-gray-400 font-normal text-[10px] text-left">{item.description.split(" ").slice(0,10).join(" ") + "..."}</p>
       </div>
       <div className="h-[180px]">
-        <img src={item.image} className="h-full w-full " />
+        <img src={item.image} alt={item.description} className="h-full w-full" />
       </div>
 
       <div className="flex justify-between gap-12 items-center w-full mt-5">
@@ -37,12 +37,12 @@ const Product = ({item}) => {
         </div>
         
         {
-          cart.some((i) => i.id == item.id) ?
+          cart.some((i) => i.id === item.id) ?
           (<button
           className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold 
           text-[12px] p-1 px-3 uppercase 
           hover:bg-gray-700
-          hover:text-white transition duration-300 ease-in"
+          hover:text-white transition duration-300 ease-in flex-shrink-0"
           onClick={removeFromCart}>
             Remove Item
           </button>) :
@@ -50,7 +50,7 @@ const Product = ({item}) => {
           className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold 
           text-[12px] p-1 px-3 uppercase 
           hover:bg-gray-700
-          hover:text-white transition duration-300 ease-in"
+          hover:text-white transition duration-300 ease-in flex-shrink-0"
           onClick={addToCart}>
             Add to Cart
           </button>)
